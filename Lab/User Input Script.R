@@ -20,3 +20,4 @@ for (each in MachineRead_output$Paper.ID) {
 rowsToRemove <- which(MachineRead_output$uniqueNumID == 1)
 
 MachineRead_output <- MachineRead_output[-c(rowsToRemove),]
+
