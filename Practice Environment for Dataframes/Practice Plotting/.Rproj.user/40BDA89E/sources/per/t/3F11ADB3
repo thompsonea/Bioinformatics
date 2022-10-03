@@ -1,0 +1,32 @@
+{
+    "id": "3F11ADB3",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1663687117285.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "expression": "Dataset_S1",
+        "caption": "Dataset_S1",
+        "totalObservations": "59140",
+        "displayedObservations": "59140",
+        "variables": "18",
+        "cacheKey": "21F59AC9",
+        "object": "Dataset_S1",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=Dataset_S1&cache_key=21F59AC9&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 3458764513820540928,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1663687117285,
+    "read_only": false,
+    "read_only_alternatives": []
+}

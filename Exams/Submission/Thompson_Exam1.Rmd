@@ -1,0 +1,78 @@
+---
+title: "BIO247 Exam 1"
+author: "Emily Thompson"
+date: "09/29/22"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Part 1 - Written
+
+## Problem 1
+
+Being robust is being able to change any variables but the experiment is still able to work. Robustness is not definitive and can be narrow or wide depending upon how transferable the experiment guidelines are. Sharing code and commenting on it to make it readable for humans is also part of being robust.
+
+Being reproducible means that the experiment has clearly described protocol that can be easily followed and conducted by others. In order to be reproducible, one should share their script used or at least supply a benchmark to reference as well. Clearly stating how things were done and why they were makes an experiment reproducible.
+
+## Problem 2
+
+This problem has been drawn on the last page of the exam.
+
+## Problem 3
+
+This conservation study is not reproducible because it does not give a clear procedure and is vague in its description. Also, the experiment itself is not sound due to the fact that they're asking a hypothetical question on how someone would behave in a situation, but their response could be far from the truth had the participants actually encountered the snake. As for robustness, one could argue that this is not robust because the age group of participants is not wide and is in fact limited to only undergraduate students. This experiemnt then is very limited in its reach.
+
+## Problem 4
+
+This bioinformatics study is robust and reproducible. It is robust and reproducible becasue it uses data accessed from open-source technologies in R programming languages which means that data for this can be easily (for the most part) accessed by others who wish to do this with different variables. Going off of that, the variables can easily be changed to something else and we could get viable results. They included where they got all of their data from and what programming they used for steps. This study includes well laid out steps that could be followed by others and apply under different variables.
+
+# Part 2 - Practical
+
+
+## Problem 5
+This is a coding diagram beneath the chunk because I am unsure of the code to conduct this.
+```{r cars}
+interact <- rep("interactions",25)
+```
+Use If/Else Loop to say if interactions are positive/negative and then print the suffix
+
+Find the positive and negatives
+
+Vectorize the suffixes that are negative
+
+Vectorize the suffixes that are positive
+
+Use the paste function
+
+## Problem 6
+This is importing the dataset and installing the ggplot package in order to create a density plot.
+```{r}
+GBM_data <- read.csv("/cloud/project/GBM_data.csv")
+install.packages("ggplot2")
+library(ggplot2)
+ggplot(GBM_data)+geom_density(aes(x=Total.Score),fill="black")
+```
+
+## Problem 7
+subsetting the rows to the top 100 interactions only.
+```{r}
+GBM_data[1:100,]
+```
+I chose to do the top 100 interactions because the density plot doesn't give me a clear indication of the number at which it changes, so instead I chose to focus on the top 100 interactions which would be the smaller humps on the density graph. By focusing on these as my threshold, I am narrowing down the data I am looking at and instead observing the top scored interactions.
+
+## Problem 8
+This is subbing out the special characters and then unlisting the IDs so that the unique ones can be counted in the dataset. Part of this solution was sourced from the RMD created for Lab4/ Lab4 Code.
+```{r}
+GBM_data$Paper.ID <-gsub("\\[","",GBM_data$Paper.ID)
+GBM_data$Paper.ID <-gsub("\\`","",GBM_data$Paper.ID)
+GBM_data$Paper.ID <-gsub("\\]","",GBM_data$Paper.ID)
+GBM_data$Paper.ID <-gsub(" ","",GBM_data$Paper.ID)
+unique(unlist(GBM_data$Paper.ID))
+
+```
+There are 817 unique paper IDs in this set.

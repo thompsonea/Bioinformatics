@@ -1,0 +1,54 @@
+---
+title: "ThompsonLab3_Report"
+author: "Emily Thompson"
+date: '2022-09-19'
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+This document goes through the R exercises (1-4) we did in class for Chapter 8 part 2 in which we practice adding and eliminating rows and columns from the data set: Test_V\_output.csv.
+
+## Exercise 1: Rows and Columns
+
+The total score column was assigned as a vector tot_score. I chose to calculate the total score for row 3, resulting in 340 as the answer. I also looked for what molecules were interacting and found them to be a protein and gem which underwent phosphorylation.
+
+```{r}
+tot_score<-Test_V_output$Total.Score
+tot_score[3]
+
+```
+
+## Exercise 2: Mean and Standard Deviation
+
+I found the mean and standard deviation of the total scores in the set using the following code. The mean resulted in 63.79919 and the standard deviation was 55.29295.
+
+```{r}
+mean(tot_score)
+sd(tot_score)
+
+```
+
+## Exercise 3: Vectorization
+
+This section is calculating the total score based off of the combination of the kind scores, evidence scores, match scores, and epistemic values. new_tot was named as a new vector.
+
+```{r}
+new_tot = (Test_V_output$Kind.Score+(Test_V_output$Evidence.Score*Test_V_output$Match.Score))
+```
+
+## Exercise 4: Subsets
+
+For this section, the locations, cell type, and organism columns were deleted and only the top 100 scored interactions were kept.
+
+```{r}
+Test_V_output<-Test_V_output[,!names(Test_V_output)%in% c("Location","Organism","Cell.Type")]
+Test_V_output[1:100,]
+```

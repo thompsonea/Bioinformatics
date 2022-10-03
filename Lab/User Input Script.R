@@ -21,3 +21,4 @@ rowsToRemove <- which(MachineRead_output$uniqueNumID == 1)
 
 MachineRead_output <- MachineRead_output[-c(rowsToRemove),]
 
+
